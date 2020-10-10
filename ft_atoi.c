@@ -32,5 +32,6 @@ int		ft_atoi(const char *str)
 	{
 		res = res * 10 + str[i++] - '0';
 	}
+	//Inserer ls limite d'int 
 	return (neg * res)
 }
