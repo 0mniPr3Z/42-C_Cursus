@@ -17,8 +17,11 @@ void	*ft_calloc( size_t elementCount, size_t elementSize)
   if (elementCount == 0 || elementSize == 0)
     elementCount = elementSize = 1;
 
-  a = malloc (elementCount * elementSize);
-  if (a)
-	  ft_bzero (a, elementCount * elementSize);
-  return a;
+  
+  if (!(a = malloc (elementCount * elementSize)))
+	  return (NULL);
+	ft_bzero (a, elementCount * elementSize);
+	return a;
+	  
+  
 }
