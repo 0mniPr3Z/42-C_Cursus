@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:25:54 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/08 18:28:05 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 20:55:48 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

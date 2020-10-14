@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/14 19:43:46 by phernand          #+#    #+#             */
+/*   Updated: 2020/10/14 19:45:39 by phernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 static char		**free_parts(char **parts, int i)
 {
 	while (i > 0)
-		free(tab[i--]);
-	free(tab);
+		free(parts[i--]);
+	free(parts);
 	return (NULL);
 }
 

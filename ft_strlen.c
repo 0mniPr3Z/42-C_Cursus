@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:53:35 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/17 16:55:04 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:02:10 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

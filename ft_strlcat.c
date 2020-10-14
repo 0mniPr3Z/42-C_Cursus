@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 13:52:46 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/22 13:53:28 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:01:28 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

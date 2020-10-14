@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 15:45:35 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/17 15:54:46 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 20:54:12 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

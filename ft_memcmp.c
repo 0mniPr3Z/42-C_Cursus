@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:39:40 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/17 16:50:07 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 20:53:04 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

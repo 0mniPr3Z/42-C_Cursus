@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/06 08:15:37 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/17 16:39:23 by phernand         ###   ########.fr       */
+/*   Created: 2020/10/13 20:51:55 by phernand          #+#    #+#             */
+/*   Updated: 2020/10/14 19:39:22 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -25,5 +23,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)a + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

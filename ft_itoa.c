@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/13 20:30:33 by phernand          #+#    #+#             */
+/*   Updated: 2020/10/13 20:32:21 by phernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 unsigned int ft_intlen_base (int value, int base){
 	int len;
 
@@ -25,7 +39,7 @@ char			*ft_itoa_base(int n, char *base)
 	}
 	len += ft_intlen_base(value, ft_strlen(base));
 	
-	if (!(str = (char *)malloc(sizeof(char) * len + 1))
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 		return (0);
 	
 	str[len--] = '\0';

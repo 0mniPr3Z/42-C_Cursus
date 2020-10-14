@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 17:12:24 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/22 13:18:41 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:00:28 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

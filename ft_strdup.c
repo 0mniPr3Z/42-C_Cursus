@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 14:03:52 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/22 14:05:09 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:01:10 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

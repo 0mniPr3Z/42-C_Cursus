@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:35:32 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/17 16:37:14 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 20:53:51 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

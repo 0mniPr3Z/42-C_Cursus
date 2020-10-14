@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 13:21:53 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/22 13:25:51 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:02:44 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

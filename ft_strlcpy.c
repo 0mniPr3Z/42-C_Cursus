@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 13:26:26 by phernand          #+#    #+#             */
-/*   Updated: 2020/06/22 13:50:11 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/13 21:01:43 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t		strlcpy(char *dst, const char *src, size_t dstsize)
 {
