@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:14:23 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/14 19:38:59 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:27:56 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

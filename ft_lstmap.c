@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 17:40:09 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 17:30:12 by phernand         ###   ########.fr       */
+/*   Created: 2020/10/21 18:40:45 by phernand          #+#    #+#             */
+/*   Updated: 2020/10/21 18:40:57 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t i;
-	char *res;
+	t_list	*head;
+	t_list	*new;
 
-	if(!s || !(res = (char *)malloc(sizeof(char) * (len +1))))
-		return (NULL);
-	if(ft_strlen(s) < start)
+	head = NULL;
+	while (lst)
 	{
-		res[0] = '\0';
-		return (res);
+		if (!(new = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&head, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&head, new);
+		lst = lst->next;
 	}
-	i = 0;
-	while(i < len && s[start + i])
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-
-	return (res);
+	return (head);
 }

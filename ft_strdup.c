@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 14:03:52 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 21:01:10 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:25:52 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strdup(const char *s1)
 	if (s2 == NULL)
 		return (NULL);
 	else
-		s2 = ft_strcpy(s2, s1);
+		ft_strcpy(s2, (char *)s1);
 	return (s2);
 }

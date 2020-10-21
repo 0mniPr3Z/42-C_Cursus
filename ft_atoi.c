@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 20:34:44 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 20:44:42 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 16:55:25 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_atoi(const char *str)
 	{
 		if ((res > 2147483647 && neg == 1))
 			return (-1);
-		if ((res  > 2147483648 && neg == -1))
+		if ((res * -1  < -2147483648 && neg == -1))
 			return (0);
 		res = res * 10 + str[i++] - '0';
 	}	

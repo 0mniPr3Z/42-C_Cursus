@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 19:43:46 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/14 19:45:39 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:40:11 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ static char		*get_part(char const *str, char c)
 	}
 	i = 0;
 	while (str[i] && str[i] != c)
-		res[i] = str[i++];
+	{
+		res[i] = str[i];
+		i++;
+	}
 	res[i] = '\0';
 	return (res);
 }
@@ -57,14 +60,13 @@ char			**ft_split(char const *s, char c)
 {
 	char	** res;
 	int		i;
-	int		part;
-  char *str;
-  
-  str = s;
+	char	*str;
+	
+	str = (char *)s;
 	if (!str)
 		return (0);
 	i = 0;
-	if (!(tab = malloc(sizeof(*res) * part_count(str, c) + 1)))
+	if (!(res = malloc(sizeof(char *) * part_count(str, c) + 1)))
 		return (0);
 	while (*str)
 	{

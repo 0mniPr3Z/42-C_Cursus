@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 20:58:05 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 20:58:17 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:33:41 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,18 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	if(!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	res = malloc((char *)sizeof(char) * (len + 1));
+	res = malloc(sizeof(char) * (len + 1));
 	if(!res)
 		return (NULL);
 	 i = 0;
 	 j = 0;
 	 while (s1[i])
-		 res[i] = s1[i++];
+	{
+		 res[i] = s1[i];
+		 i++;
+	}
 	while (s2[j])
 		res[i++] = s2[j++];
 	res[i] = '\0';
-	return (res)
+	return (res);
 }

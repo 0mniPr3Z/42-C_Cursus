@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:28:25 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 20:56:33 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:44:21 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int i;
 
+	i = 0;
 	while(s[i])
 		ft_putchar_fd(s[i++], fd);
 }

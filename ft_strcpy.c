@@ -6,8 +6,20 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 19:53:15 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/14 19:53:30 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:23:48 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-DISPO PISCINE
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = src[i];
+	return (dest);
+}

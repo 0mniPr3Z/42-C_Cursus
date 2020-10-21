@@ -6,13 +6,13 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 20:30:33 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 20:32:21 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:41:52 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int ft_intlen_base (int value, int base){
+unsigned int	ft_intlen_base (int value, int base){
 	int len;
 
 	len = 0;
@@ -58,5 +58,5 @@ char			*ft_itoa_base(int n, char *base)
 
 char			*ft_itoa(int n)
 {
-	return (ft_itoa_base(n, "0123456789");
+	return (ft_itoa_base(n, "0123456789"));
 }

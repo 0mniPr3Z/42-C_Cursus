@@ -1,9 +1,15 @@
-#ifndef
-# define libft.h
+#ifndef libft
+# define libft
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stddef.h>
+
+typedef struct	s_list
+{
+	void		*content;
+	struct 		s_list *next;
+}				t_list;
 
 size_t  ft_strlen(const char *s);
 int		ft_tolower(int c);
@@ -36,4 +42,5 @@ void	ft_bzero(void *s,  size_t n);
 void	*ft_calloc( size_t elementCount, size_t elementSize);
 int		ft_atoi(const char *str);
 
+t_list	*f_lstnew()t
 #endif
