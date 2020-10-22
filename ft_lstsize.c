@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 18:42:29 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 18:42:41 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/22 19:05:32 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_lstsize(t_list *lst)
 {

@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 18:35:59 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 18:36:31 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/22 18:59:34 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

@@ -6,7 +6,7 @@
 #    By: phernand <phernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 09:28:23 by phernand          #+#    #+#              #
-#    Updated: 2020/06/17 15:25:23 by phernand         ###   ########.fr        #
+#    Updated: 2020/10/22 19:40:28 by phernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,9 @@ ft_strmapi.c \
 ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
-ft_putnbr_fd.c \
-ft_lstnew.c \
+ft_putnbr_fd.c
+
+SRCB = ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
@@ -57,10 +58,16 @@ ft_lstdelone.c \
 ft_lstclear.c \
 ft_lstiter.c \
 ft_lstmap.c
+
 OBJ = $(SRC:.c=.o)
+BONUS = $(SRCB:.c=.o)
 
 $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
+
+bonus:	$(OBJ) $(BONUS)
+		ar ac $(NAME) $(OBJ) $(BONUS)
 		ranlib $(NAME)
 
 %.o: %.c
@@ -69,7 +76,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-		$(RM) $(OBJ)
+		$(RM) $(OBJ) $(BONUS)
 
 fclean: clean
 		$(RM) $(NAME)

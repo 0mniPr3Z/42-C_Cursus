@@ -6,9 +6,11 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 18:38:06 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 18:38:10 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/22 19:02:12 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
