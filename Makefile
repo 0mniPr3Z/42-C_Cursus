@@ -6,7 +6,7 @@
 #    By: phernand <phernand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 09:28:23 by phernand          #+#    #+#              #
-#    Updated: 2020/10/22 19:40:28 by phernand         ###   ########.fr        #
+#    Updated: 2020/10/23 18:34:27 by phernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ ft_memcpy.c \
 ft_memmove.c \
 ft_memset.c \
 ft_strchr.c \
+ft_strlcpy.c \
 ft_strdup.c \
 ft_strlcat.c \
 ft_strlen.c \
@@ -60,27 +61,28 @@ ft_lstiter.c \
 ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
-BONUS = $(SRCB:.c=.o)
+OBJ_BONUS = $(SRCB:.c=.o)
+
+all: $(NAME)
 
 $(NAME): $(OBJ)
-		ar rc $(NAME) $(OBJ)
+		ar -rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 
-bonus:	$(OBJ) $(BONUS)
-		ar ac $(NAME) $(OBJ) $(BONUS)
+
+bonus:	$(OBJ) $(OBJ_BONUS)
+		ar -rc $(NAME) $(OBJ) $(OBJ_BONUS)
 		ranlib $(NAME)
 
 %.o: %.c
 		$(CC) -I. -o $@ -c $? $(CFLAGS)
 
-all: $(NAME)
-
 clean:
-		$(RM) $(OBJ) $(BONUS)
+		$(RM) $(OBJ) $(OBJ_BONUS)
 
-fclean: clean
-		$(RM) $(NAME)
+fclean:
+		$(RM) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 re: fclean all
 
-.PHONY: clean fclean
+.PHONY: clean fclean bonus re all

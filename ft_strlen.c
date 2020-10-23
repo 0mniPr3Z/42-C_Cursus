@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:53:35 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 21:02:10 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/23 19:09:04 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i++]);
+	while (s[i])
+		i++;
 	return (i);
 }
