@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 19:43:46 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 17:40:11 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 18:27:09 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,32 @@
 
 static char		**free_parts(char **parts, int i)
 {
-	while (i > 0)
+	while (i >= 0)
 		free(parts[i--]);
 	free(parts);
 	return (NULL);
 }
 
-static int		part_count(char const *str, char c)
+static int		parts_count(char const *str, char c)
 {
 	int i;
 	int count;
 
 	i = 0;
 	count = 0;
-	while (str[i++] == c);
+	while (str[i] == c)
+		i++;
 	while (str[i])
-		if ((str[i++] == c && str[i] != c) || str[i] == '\0')
+	{
+		while(str[i] && str[i] == c)
+			i++;
+		if(str[i] && str[i] != c)
+		{
 			count++;
+			while(str[i] && str[i] != c)
+				i++;
+		}
+	}
 	return (count);
 }
 
@@ -40,11 +49,12 @@ static char		*get_part(char const *str, char c)
 	char	*res;
 
 	i = 0;
-	while (str[i] && str[i++] != c);
-	if (!(res = malloc(sizeof(res) * i + 1)))
+	while (str[i] && str[i] != c)
+		i++;
+	if (!(res = malloc(sizeof(char) * i + 1)))
 	{
 		free(res);
-		return (0);
+		return (NULL);
 	}
 	i = 0;
 	while (str[i] && str[i] != c)
@@ -58,27 +68,25 @@ static char		*get_part(char const *str, char c)
 
 char			**ft_split(char const *s, char c)
 {
-	char	** res;
+	char	**res;
 	int		i;
-	char	*str;
-	
-	str = (char *)s;
-	if (!str)
-		return (0);
+
 	i = 0;
-	if (!(res = malloc(sizeof(char *) * part_count(str, c) + 1)))
-		return (0);
-	while (*str)
+	if (!s)
+		return (NULL);
+	if (!(res = malloc(sizeof(*res) * (parts_count(s, c) + 1))))
+		return (NULL);
+	while (*s)
 	{
-		while (*str == c)
-			str++;
-		if (*str != c)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			if (!(res[i] = get_part(str, c)))
+			if (!(res[i] = get_part(s, c)))
 				return (free_parts(res, i));
 			i++;
-			while (*str != c)
-				str++;
+			while (*s && *s != c)
+				s++;
 		}
 	}
 	res[i] = NULL;

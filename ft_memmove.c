@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:35:32 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 20:53:51 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:04:52 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*a;
 	unsigned char	*b;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	a = (unsigned char *)dst;
 	b = (unsigned char *)src;

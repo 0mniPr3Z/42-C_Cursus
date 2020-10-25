@@ -6,43 +6,29 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:47:51 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/23 17:47:15 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 11:51:28 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_write_nbr_fd(int nbr, int fd)
-{
-	nbr += 48;
-	write(fd, &nbr, 1);
-}
-
 void	ft_putnbr_fd(int nbr, int fd)
 {
-	int a;
-
-	if (nbr < 0)
+	long int a;
+	
+	a = nbr;
+	if (a < 0)
 	{
-		write(fd, "-", 1);
-		if (nbr == -2147483648)
-		{
-			write(fd, "2", 1);
-			ft_putnbr_fd(147483648, fd);
-			return;
-		}
-		nbr *= -1;
-		ft_putnbr_fd(nbr, fd);
+		ft_putchar_fd('-', fd);
+		a *= -1;
 	}
-	else if (nbr > 9)
+	if (a > 9)
 	{
-		a = nbr / 10;
-		ft_putnbr_fd(a, fd);
-		a = (nbr % 10);
-		ft_write_nbr_fd(a, fd);
+		ft_putnbr_fd(a / 10, fd);
+		ft_putchar_fd(a % 10 + '0', fd);
 	}
 	else
 	{
-		ft_write_nbr_fd(nbr, fd);
+		ft_putchar_fd(a + '0', fd);
 	}
 }

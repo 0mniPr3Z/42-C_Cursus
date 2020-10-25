@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:14:23 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 17:27:56 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:01:54 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned int	i;
 	unsigned char	*a;
 	unsigned char	*b;
-
+	
+	if(!src && !dst)
+		return (NULL);
 	i = 0;
 	a = (unsigned char *)dst;
 	b = (unsigned char *)src;

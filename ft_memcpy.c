@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 16:06:35 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/23 19:51:40 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 18:59:05 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	size_t	i;
 
-	if(!dst || !src)
-		return (0);
+	i = 0;
+	if(!dst && !src)
+		return (NULL);
 	if (dst == src || n == 0)
 		return (dst);
-	while (n > 0)
+	while (i < n)
 	{
-		*dst = *src;
-		n--;
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
 	}
 	return (dst);
 }

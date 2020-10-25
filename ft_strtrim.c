@@ -6,7 +6,7 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 21:03:47 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/13 21:04:19 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 12:01:12 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	len = ft_strlen(s1);
-  while (*s1 && ft_strchr(set, *s1))
+	while (*s1 && ft_strchr(set, *s1))
 		s1++;
-	
+	len = ft_strlen(s1);
 	while (*s1 && ft_strchr(set, s1[len]))
 		len--;
 	res = ft_substr(s1, 0, len + 1);

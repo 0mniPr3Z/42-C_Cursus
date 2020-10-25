@@ -6,57 +6,50 @@
 /*   By: phernand <phernand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 20:30:33 by phernand          #+#    #+#             */
-/*   Updated: 2020/10/21 17:41:52 by phernand         ###   ########.fr       */
+/*   Updated: 2020/10/25 18:05:07 by phernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_intlen_base (int value, int base){
+unsigned int	ft_intlen(unsigned int value)
+{
 	int len;
 
-	len = 0;
-	while(value >= base)
+	len = 1;
+	while(value >= 10)
 	{
 		len++;
-		value /= base;
+		value /= 10;
 	}
   return (len);
 }
 
-char			*ft_itoa_base(int n, char *base)
+char			*ft_itoa(int n)
 {
-	unsigned int	len;
+	int				len;
 	unsigned int	value;
 	char			*str;
-
+	
 	len = 0;
-	value = n;
-	if (value < 0)
+	if (n < 0)
 	{
 		value = n * -1;
 		len++;
 	}
-	len += ft_intlen_base(value, ft_strlen(base));
-	
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
-		return (0);
-	
-	str[len--] = '\0';
-	
-	while (len)
+	else
+		value = n;
+	len += ft_intlen(value);
+	if (!(str = malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	str[len] = '\0';
+	while (len--)
 	{
-		str[len--] = base[value % ft_strlen(base)];
-		value /= ft_strlen(base);
+		
+		str[len] = (value % 10) + '0';
+		if(len == 0 && n < 0)
+			str[len] = '-';
+		value /= 10;
 	}
-	if(n < 0)
-		str[0] = '-';
-	 else
-	    str[0] = value;
 	return (str);
-}
-
-char			*ft_itoa(int n)
-{
-	return (ft_itoa_base(n, "0123456789"));
 }
